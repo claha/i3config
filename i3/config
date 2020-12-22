@@ -1,8 +1,7 @@
-# i3 config file (v4)
+# Set mod key to Mod4 (<Super>)
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# Set font for window titles and status bar.
 font pango:monospace 8
 
 # Configure border style
@@ -10,6 +9,9 @@ default_border pixel 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# Disable focus on mouse over window
+focus_follows_mouse no
 
 # Always use --no-startup-id
 set $exec exec --no-startup-id
@@ -33,7 +35,7 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+odiaeresi focus right
 
-# Alternatively, you can use the cursor keys:
+# Change focus alternatives
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -45,7 +47,7 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+odiaeresi move right
 
-# Alternatively, you can use the cursor keys:
+# Move focused window alternatives
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -74,8 +76,7 @@ bindsym $mod+space focus mode_toggle
 # Focus the parent container
 bindsym $mod+a focus parent
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+# Define names for default workspaces
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -108,9 +109,6 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 
-# Disable focus on mouse over window
-focus_follows_mouse no
-
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -130,8 +128,7 @@ exec setxkbmap -option ctrl:nocaps &
 for_window [class="Firefox"] move to workspace number $ws1
 exec firefox &
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar and i3status
 bar {
     status_command i3status
 }
