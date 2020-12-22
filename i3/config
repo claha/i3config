@@ -125,6 +125,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Use Caps Lock as an additional Control key
 exec setxkbmap -option ctrl:nocaps &
 
+# Hide the mouse cursor after a second
+exec unclutter -idle 1 -noevents &
+
 # Start i3bar to display a workspace bar and i3status
 bar {
     status_command i3status
