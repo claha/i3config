@@ -26,6 +26,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 # Kill focused window
 bindsym $mod+Shift+q kill
 
+# Lock the screen
+bindsym Scroll_Lock exec ~/.bin/lock-screen
+
 # Start a program launcher
 bindsym $mod+d exec dmenu_run
 
